@@ -5,11 +5,11 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('animal-shelter:server');
+var debug = require('debug')('heroku:server');
 var http = require('http');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/animalShelter');
+mongoose.connect(process.env.MONGO_URL);
 
 /**
  * Get port from environment and store in Express.
