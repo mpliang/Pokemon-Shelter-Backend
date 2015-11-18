@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   Trainer.find({}, function(err, data){
     console.log(data);
     res.status(err ? 400 : 200).send(err || data);
-  });
+  }).populate('pets', 'name');
 });
 
 // router.delete('/', function(req, res, next) {
