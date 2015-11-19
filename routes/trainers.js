@@ -73,7 +73,7 @@ router.get('/:trainerId', function(req, res) {
   Trainer.findById(req.params.trainerId, function(err, client){
     console.log('test');
     res.send(client);
-  }).populate('pets');
+  }).populate('pets', 'name');
 });
 
 router.put('/:trainerId/toggle', function(req,res) {
